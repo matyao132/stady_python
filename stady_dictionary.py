@@ -43,3 +43,26 @@ name_list = sorted(dmg.keys())
 
 for p in name_list:
     print(dmg[p])
+
+# https://paiza.jp/works/mondai/c_rank_level_up_problems/c_rank_dictionary_boss
+# 問題文難しい...上手く理解できなかった
+
+[p, q, r] = [int(i) for i in input().split()]
+AB = {}
+BC = {}
+
+for _ in range(p):
+    [i, j] = [int(n) for n in input().split()]
+    AB[i] = j
+
+for _ in range(q):
+    [j, k] = [int(n) for n in input().split()]
+    BC[j] = k
+
+AC = {}
+
+for i in range(1, p + 1):
+    AC[i] = BC[AB[i]]
+
+for i, k in AC.items():
+    print(i,k)
